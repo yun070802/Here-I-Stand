@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>外语读本交流夜 · Foreign Book Meetup</title>
+    <style>
+        /* 页面整体：浅绿色渐变底 + 居中布局（不使用 margin / padding / border） */
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background: linear-gradient(135deg, #ecfae7, #f8fdf6);
+            color: #2f3b2c;
+            text-align: center;
+        }
+
+        /* 主内容卡片：只修改 background-color 为暖草绿 #E6F8E0，其余原样保留 */
+        .page {
+        display: inline-block;
+        background-color: #E6F8E0;
+        box-shadow: 0 0 30px rgba(80, 58, 35, 0.25);
+        text-align: left;
+        max-width: 720px;
+        }
+
+        /* 并集选择器：统一各级标题的颜色与字间距 */
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c5f2d;
+            letter-spacing: 1px;
+        }
+
+        /* 类选择器：居中与右对齐 */
+        .center {
+            text-align: center;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        /* ID 选择器：只匹配 <p id="intro"> 这条重要提示，使其放大、加粗、变色 */
+        p#intro {
+            font-size: 140%;
+            font-weight: bold;
+            color: #b5432f;
+            line-height: 1.9;
+        }
+
+        /* 活动介绍的普通段落：靠行高与字间距提高阅读舒适度 */
+        .intro-text {
+            line-height: 1.9;
+            letter-spacing: 0.5px;
+        }
+
+        /* 区域小标题居中 */
+        .section-title {
+            text-align: center;
+        }
+
+        /* 各区域左右留白，让文字不贴着卡片边缘 */
+        .block {
+            padding-left: 26px;
+            padding-right: 26px;
+        }
+
+        /* 表格基础样式：用背景色与行高区分层次 */
+        table {
+            width: 100%;
+            background-color: #f6fdf2;
+            font-size: 90%;
+        }
+
+        th {
+            background-color: #cfe9c3;
+            font-weight: bold;
+            text-align: left;
+            line-height: 2.2;
+        }
+
+        td {
+            line-height: 2.0;
+        }
+
+        /* 斑马纹：偶数行浅绿，便于对齐查看 */
+        table tr:nth-child(even) {
+            background-color: #ecf9e5;
+        }
+
+        /* 鼠标移入整行高亮 */
+        table tr:hover {
+            background-color: #ddf3d2;
+        }
+
+        /* 后代选择器：div 里的 table 里的 a，只放大表格内的姓名链接 */
+        div table a {
+            font-weight: bold;
+            font-size: 110%;
+            color: #3d7a3a;
+        }
+
+        /* 链接伪类：未访问 / 已访问 / 悬停 / 按下 */
+        a:link {
+            color: #3d7a3a;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #7c8a63;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #67a851;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #2f5d9e;
+            text-decoration: underline;
+        }
+
+        /* 带类名的链接：一个偏红，一个偏蓝 */
+        a.red:link {
+            color: #cf5230;
+        }
+
+        a.red:active {
+            color: #3046a1;
+        }
+
+        a.blue:link {
+            color: #2f6f9f;
+        }
+
+        a.blue:active {
+            color: #a53aa4;
+        }
+
+        /* 伪元素：段落首字放大并换色，作出杂志排版的呼吸感 */
+        p::first-letter {
+            font-size: 180%;
+            color: #3d7a3a;
+        }
+
+        /* 伪元素：每个 div 的第一行加粗变色 */
+        div::first-line {
+            color: #2f6b2c;
+            font-weight: bold;
+        }
+
+        /* 底部公告区：字号略小、行距略紧，并用浅色底把它压成一条“脚注” */
+        .notice {
+            font-size: 90%;
+            line-height: 1.8;
+            background-color: #d9f0ce;
+        }
+
+        /* 分隔线：用高度与渐变模拟，不使用 border */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, rgba(47, 107, 44, 0), rgba(47, 107, 44, 0.5), rgba(47, 107, 44, 0));
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- ① 顶部标题区 -->
+    <div class="block">
+        <h1 class="center">外语读本交流夜<br>Foreign Book Meetup</h1>
+    </div>
+
+    <div class="divider"></div><br>
+
+    <!-- ② 活动介绍区 -->
+    <div class="block">
+        <h2 id="intro" class="center">把一本外语书，读给夜色听</h2>
+
+        <p class="intro-text">
+            十一月二十八日晚七点，共享阅读室的日光灯会提前关掉，只留两盏台灯。桌上摆着热水和几本翻旧了的外语书——这不是一场分享会，是一场把句子读完的夜读。
+        </p>
+
+        <p class="intro-text">
+            A book is a dream that you hold in your hands. 这句话印在海报最上面。一本书是你捧在手里的梦，今晚我们把它翻开，读给对面的陌生人听。
+        </p>
+
+        <p class="intro-text center">
+            当晚的流程很简单：每人带来一本正在读的外语读本，读一段给对面的人听。英文、日语、法语、德语都可以；读得磕巴也没关系，我们只在意你有没有把那个句子读完。最后二十分钟自由交流，可以换书，也可以只换一句推荐。
+        </p>
+
+        <p id="intro">
+            重要提示：本场只设 20 个席位，报名请务必留下可联系的手机号；不需要你外语流利，也不需要你读完那本书，把它带来就够了。
+        </p>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+    <!-- ③ 活动报名信息表格区 -->
+    <div class="block">
+        <h3 class="section-title">活动报名名单</h3>
+
+        <table>
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>语言等级</th>
+                <th>报名状态</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td><a href="https://yun070802.github.io/Here-I-Stand/sun-0107-work2.html">Oliver</a></td>
+                <td>托福必读</td>
+                <td>已确认席位</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td><a href="https://yun070802.github.io/Here-I-Stand/sun-0107-work2.html">苏晚</a></td>
+                <td>雅思必读</td>
+                <td>已确认席位</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td><a href="https://yun070802.github.io/Here-I-Stand/sun-0107-work2.html">Sofia</a></td>
+                <td>GMT必读</td>
+                <td>待确认</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>周雨桐</td>
+                <td>四级选读</td>
+                <td>候补名单</td>
+            </tr>
+        </table>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+    <!-- ④ 页面链接区：两条链接直接放在 div 里，样式由 a.red / a.blue 分开控制 -->
+    <div class="center block">
+        <a class="red" href="https://yun070802.github.io/Here-I-Stand/sun-0107-work2.html">查看往期活动照片</a><br>
+        <a class="blue" href="https://yun070802.github.io/Here-I-Stand/sun-0107-work2.html">在线咨询活动详情</a>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+    <!-- ⑤ 底部公告区 -->
+    <div class="notice block">
+        活动地点：图书馆三楼共享阅读室，十一月二十八日 19:00 入场，19:30 关灯开读。<br>
+        报名截止：十一月二十七日 22:00，席位按留言顺序排定，满 20 人即止。<br>
+        温馨提醒：现场不提供借书与翻译，请自带一本外语读本；热茶、台灯与便签，由活动组准备。
+    </div>
+
+    <br>
+
+</div>
+
+</body>
+</html>
